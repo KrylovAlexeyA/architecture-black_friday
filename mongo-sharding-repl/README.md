@@ -1,6 +1,4 @@
-# pymongo-api
-
-# !!! Для проверки задания следуйте в sharding-repl-cache/README.md
+# mongo-sharding
 
 ## Как запустить
 
@@ -10,10 +8,22 @@
 docker compose up -d
 ```
 
-Заполняем mongodb данными
+Подключаемся к серверу конфигурации и делаем инициализацию:
 
 ```shell
-./scripts/mongo-init.sh
+./scripts/config-server-init.sh
+```
+
+Инициализируем шарды:
+
+```shell
+./scripts/shard-init.sh
+```
+
+Инцициализируем роутер и наполняем его тестовыми данными:
+
+```shell
+./scripts/router-init.sh
 ```
 
 ## Как проверить
@@ -35,3 +45,4 @@ curl --silent http://ifconfig.me
 ## Доступные эндпоинты
 
 Список доступных эндпоинтов, swagger http://<ip виртуальной машины>:8080/docs
+
